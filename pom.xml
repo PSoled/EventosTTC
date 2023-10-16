@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com</groupId>
+    <artifactId>EventosTTC</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <name>EventosTTC</name>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>papermc-repo</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>craftbukkit</artifactId>
+            <version>1.5.2-R1.1</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/MCPCTotal-1.0.4 DeObf.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.tehkode</groupId>
+            <artifactId>PermissionsEx</artifactId>
+            <version>1.19.5</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/PermissionsEx.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>net.milkbowl.vault</groupId>
+            <artifactId>Vault</artifactId>
+            <version>1.2.31</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/Vault.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sk89q</groupId>
+            <artifactId>worldedit</artifactId>
+            <version>5.5.7</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/worldedit-5.5.7.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sk89q</groupId>
+            <artifactId>worldguard</artifactId>
+            <version>5.7.5</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/WorldGuard.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>me.dpohvar.powernbt</groupId>
+            <artifactId>PowerNBT</artifactId>
+            <version>0.5.4</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/PowerNBT-0.5.4.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>mods.tinker</groupId>
+            <artifactId>TConstruct</artifactId>
+            <version>1.4</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/Mod-TConstruct.jar</systemPath>
+        </dependency>
+
+    </dependencies>
+</project>

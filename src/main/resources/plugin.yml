@@ -1,0 +1,9 @@
+name: EventosTTC
+version: '1.0'
+main: com.totalcraft.soled.EventosTTC
+author: PlayerSoled
+description: Plugin de Eventos do Servidor TotalCraft.
+
+commands:
+  evento:
+    description: Comando de Evento.
